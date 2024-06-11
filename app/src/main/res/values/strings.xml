@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Bank Registration</string>
+    <string name="registration_header">First of the few steps to set you up with a Bank Account</string>
+    <string name="pan_number_label">PAN NUMBER</string>
+    <string name="birthdate_label">BIRTHDATE</string>
+    <string name="help_txt">Providing PAN &amp; Date of Birth helps us find and fetch your KYC from a central registry by the Government of India. Learn more</string>
+    <string name="next_btn">NEXT</string>
+    <string name="i_do_not_have_a_pan">I don\'t have a PAN</string>
+    <string name="success">Details submitted successfully</string>
+</resources>
