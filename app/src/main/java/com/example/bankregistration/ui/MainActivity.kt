@@ -123,6 +123,8 @@ fun UiElements(innerPadding: PaddingValues, viewModel: MainActivityViewModel?) {
                         Toast.LENGTH_SHORT
                     ).show()
                 }
+            } else {
+                isVerifyPan.value = false
             }
         }
 
