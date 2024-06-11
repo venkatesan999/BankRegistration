@@ -106,7 +106,7 @@ fun UiElements(innerPadding: PaddingValues, viewModel: MainActivityViewModel?) {
             date.value,
             year.value
         ) {
-            if (panNumber.value.length > 9 && year.value.length > 3 && date.value.isNotEmpty() && month.value.isNotEmpty()) {
+            if (panNumber.value.length == 10 && year.value.length == 4 && date.value.isNotEmpty() && month.value.isNotEmpty()) {
                 viewModel?.verifyPan(
                     panNumber.value,
                     date.value,

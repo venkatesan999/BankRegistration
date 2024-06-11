@@ -10,14 +10,16 @@ class PanUseCaseRepository {
             isDobValid(panDetails.date.toInt(), panDetails.month.toInt(), panDetails.year.toInt())
         val isValidInputFields = isValidInputFields(
             panDetails.panNumber,
+            panDetails.date,
+            panDetails.month,
             panDetails.year
         )
         val isDateAndMonthFields = isDateAndMonthFields(panDetails.date, panDetails.month)
 
-        return if (isPanValid.first && isDobValid.first && isValidInputFields && isDateAndMonthFields.first) {
+        return if (isValidInputFields && isPanValid.first && isDobValid.first && isDateAndMonthFields.first) {
             Pair(true, null)
         } else {
-            val errorMessage = isDateAndMonthFields.second ?: isDobValid.second ?: isPanValid.second
+            val errorMessage = isPanValid.second ?: isDateAndMonthFields.second ?: isDobValid.second
             Pair(false, errorMessage)
         }
     }
@@ -30,8 +32,13 @@ class PanUseCaseRepository {
         }
     }
 
-    private fun isValidInputFields(panNumber: String, year: String): Boolean =
-        panNumber.length > 9 && year.length > 3
+    private fun isValidInputFields(
+        panNumber: String,
+        date: String,
+        month: String,
+        year: String
+    ): Boolean =
+        panNumber.length == 10 && date.length == 2 && month.length == 2 && year.length == 4
 
     private fun isPanValid(panNumber: String): Pair<Boolean, String?> {
         val panRegex = "[A-Z]{5}[0-9]{4}[A-Z]{1}".toRegex()
