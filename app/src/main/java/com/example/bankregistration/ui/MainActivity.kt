@@ -312,7 +312,7 @@ fun MonthTextField(
                     contentAlignment = Alignment.Center
                 ) {
                     Text(
-                        "DD",
+                        "MM",
                         style = TextStyle(
                             fontFamily = FontFamily.Default,
                             fontSize = 16.sp,
@@ -372,7 +372,7 @@ fun DateTextField(
                     contentAlignment = Alignment.Center
                 ) {
                     Text(
-                        "MM",
+                        "DD",
                         style = TextStyle(
                             fontFamily = FontFamily.Default,
                             fontSize = 16.sp,
